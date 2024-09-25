@@ -1,6 +1,9 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setSearch } from '../../Redux/Slices/SearchSLices'
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   return (
     <nav className='flex flex-col w-auto lg:flex-row justify-between py-3 mx-6 mb-10'>
         <div>
@@ -8,7 +11,7 @@ const Navbar = () => {
             <h1 className='text-xl font-bold'>Foodie</h1>
         </div>
         <div>
-            <input type='search' name='search' id='' placeholder='Enter the dish' autoComplete='off' className='p-3 border-2 text-sm rounded-lg outline-none w-full lg:w-[25vw]'></input>
+            <input type='search' name='search' id='' placeholder='Enter the dish' autoComplete='off' onChange={(e)=>dispatch(setSearch(e.target.value))} className='p-3 border-2 text-sm rounded-lg outline-none w-full lg:w-[25vw]'></input>
         </div>
     </nav>
   )

@@ -2,8 +2,9 @@ import React from 'react'
 
 const Success = () => {
   return (
-    <div>
-      <h1 className='text-xl bg-green-300'>Home page with tailwind css success fully implemented</h1>
+    <div className='flex flex-col items-center justify-center h-screen'>
+      <h2>Order conformed!!</h2>
+      <p>Your order has been placed successfully placed</p>
     </div>
   )
 }

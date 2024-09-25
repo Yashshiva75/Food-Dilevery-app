@@ -5,8 +5,9 @@ import { useSelector } from 'react-redux';
 import { FaCartArrowDown } from "react-icons/fa";
 
 
+
 const Cart = () => {
-  const [isActive, setIsActive] = useState(true); // Initialize isActive to true
+  const [isActive, setIsActive] = useState(false); // Initialize isActive to true
   const cartItems = useSelector((state) => state.cart.cart);
   const totalQty = cartItems.reduce((totalQty,item)=>totalQty+item.qty,0) 
   const totalPrice = cartItems.reduce((total,item)=> total+item.qty * item.price,0)
@@ -14,6 +15,7 @@ const Cart = () => {
   const handleClose = () => {
     setIsActive(false); // Set isActive to false when the close icon is clicked
   };
+  
 
   return (
     <>
@@ -28,11 +30,11 @@ const Cart = () => {
           {cartItems.map((food)=>{
             return <Itemcard key={food.id} id={food.id} name={food.name} price={food.price} img={food.img} qty={food.qty}/>
           })}
-          <div className='absolute bottom-0'>
+          <div className='absolute left-3 bottom-5'>
             <h3 className='font-semibold'>Items : {totalQty}</h3>
             <h3 className='w-[90px] '>Total amount: {totalPrice}</h3>
             <hr />
-            <button className='bg-green-400 font-bold py-1 text-white px-3 rounded-lg w-[90vw] lg:w-[18vw]'>Checkout</button>
+            <button  className='bg-green-400 font-bold py-1 text-white px-3 rounded-lg w-[90vw] lg:w-[18vw]'>Checkout</button>
           </div>
           
         </>
