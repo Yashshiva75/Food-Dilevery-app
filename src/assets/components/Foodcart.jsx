@@ -6,7 +6,7 @@ import { addtoCart } from '../../Redux/Slices/Cartslices';
 const Foodcart = ({id,name,price,desc, img, rating,handletoast}) => {
   const dispatch = useDispatch();
   return (
-    <div className='font-bold w-[250px] p-4 bg-yellow-200 flex-col gap-2 rounded-xl'>
+    <div className='font-bold w-[280px] p-4 bg-gray-200 flex-col gap-2 rounded-xl'>
       <img src={img} alt="" className='w-auto h-[130px] hover:scale-110 cursor-grabbing transition-all duration-500 ease-in-out'/>
       <div className='text-lg flex justify-between'><h2>{name}</h2>
       <span className='text-green-500'>₹{price}</span>
